@@ -1,0 +1,52 @@
+﻿@page
+@model KhumaloCraftReg_2.Pages.Products.IndexModel
+@{
+}
+<br>
+<h2>Khumalo Craft Products</h2>
+<a class="btn btn-primary btn-sm" href="/Products/Create"> New Product </a> 
+<table class="table">
+	<thead>
+
+		<tr>
+		<th></th>
+			<th>ID</th>
+			<th>Product Name</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>Availabiliy</th>
+			<th> Ratings</th>
+			<th>Created At</th>
+			<th>Action</th>
+		</tr>
+
+
+
+	</thead>
+	<tbody>
+		@foreach(var item in Model.listProducts)
+		{
+
+			<tr>
+			
+				<td>@item.id</td>
+				<td>@item.product_name</td>
+				<td>@item.price</td>
+				<td>@item.category</td>
+				<td>@item.availability</td>
+				<td>@item.create_at</td>
+				<td>@item.ratings</td>
+
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Products/Edit?id=@item.id"> Edit </a>
+					<a class="btn btn-primary btn-sm" href="/Products/Delete?id = @item.id"> Delete </a>
+
+				</td>
+
+				
+			</tr>
+		}
+	</tbody>
+
+
+</table>
